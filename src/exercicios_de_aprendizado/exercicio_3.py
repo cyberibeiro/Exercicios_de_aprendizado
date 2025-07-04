@@ -5,9 +5,7 @@
 # f(3) = 1 + 1
 # f(3) = 2
 def fibonacci(n):
-    if 1 == n or 2 == n:
-        return 1
-    return fibonacci(n-1) + fibonacci(n-2)
+    return 1 if 1 == n or 2 == n else fibonacci(n-1) + fibonacci(n-2)
 
 def exercicio_3_ruim(limit):
     pares = []
