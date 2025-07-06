@@ -11,4 +11,4 @@ def encontrar_maior_palindromo(inicio, fim):
 
 
 resultado = encontrar_maior_palindromo(100, 999)
-print(f"O maior palíndromo produto de dois números de 3 dígitos é: {resultado}")
+print(f"O maior palíndromo é: {resultado}")
