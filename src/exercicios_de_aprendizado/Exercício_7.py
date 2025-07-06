@@ -1,3 +1,14 @@
-'''Um número palindrômico é lido da mesma forma nos dois sentidos. O maior palíndromo feito a partir do produto de dois números de $ 2 $ dígitos é $ 9009 = 91 \times 99 $.
+def encontrar_maior_palindromo(inicio, fim):
+    maior_palindromo = 0
+    for n1 in range(inicio, fim + 1):
+        for n2 in range(inicio, fim + 1):
+            produto = n1 * n2
+            str_produto = str(produto)
+            if str_produto == str_produto[::-1]:
+                if produto > maior_palindromo:
+                    maior_palindromo = produto
+    return maior_palindromo
 
-Encontre o maior palíndromo feito do produto de dois números de $ 3 $ dígitos.'''
+
+resultado = encontrar_maior_palindromo(100, 999)
+print(f"O maior palíndromo produto de dois números de 3 dígitos é: {resultado}")
