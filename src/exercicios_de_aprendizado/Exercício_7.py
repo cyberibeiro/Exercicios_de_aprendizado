@@ -1,14 +1,14 @@
-def encontrar_maior_palindromo(inicio, fim):
-    maior_palindromo = 0
+def find_the_largest_palindrome(inicio, fim):
+    largest_palindrome = 0
     for n1 in range(inicio, fim + 1):
         for n2 in range(inicio, fim + 1):
-            produto = n1 * n2
-            str_produto = str(produto)
-            if str_produto == str_produto[::-1]:
-                if produto > maior_palindromo:
-                    maior_palindromo = produto
-    return maior_palindromo
+            product = n1 * n2
+            str_product = str(product)
+            if str_product == str_product[::-1]:
+                if product > largest_palindrome:
+                    largest_palindrome = product
+    return largest_palindrome
 
 
-resultado = encontrar_maior_palindromo(100, 999)
-print(f"O maior palíndromo é: {resultado}")
+result = find_the_largest_palindrome(100, 999)
+print(f"O maior palíndromo é: {result}")
