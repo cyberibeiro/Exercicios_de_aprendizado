@@ -1,5 +1,5 @@
-def exercicio_1(limit):
-    multiplos = []
+def exercise_1(limit: int) -> int:
+    multiplos: list[int] = []
     n = 1
 
     while n < limit:
