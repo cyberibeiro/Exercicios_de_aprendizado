@@ -7,6 +7,4 @@ def exercicio_1(limit):
             multiplos.append(n)
         n += 1
 
-    return multiplos
-
-print("A soma de todos os múltiplos de 3 e 5 é ", sum(exercicio_1(10)))
+    return sum(multiplos)
