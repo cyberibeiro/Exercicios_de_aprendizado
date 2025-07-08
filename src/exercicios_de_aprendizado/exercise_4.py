@@ -1,3 +1,5 @@
+def exercise_4(add_raised)
+
 natural: list [int] = []
 n_raised: list [int] = []
 
