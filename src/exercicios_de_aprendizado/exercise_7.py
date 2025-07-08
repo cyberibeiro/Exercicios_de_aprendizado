@@ -1,4 +1,4 @@
-def find_the_largest_palindrome(beginning, end):
+def find_the_largest_palindrome(beginning: int, end: int) -> int:
     largest_palindrome = 0
     for n1 in range(beginning, end + 1):
         for n2 in range(beginning, end + 1):
