@@ -27,7 +27,7 @@ def test_foldl() -> None:
 
 
 def test_foldr() -> None:
-    assert foldr(lambda acc, x: acc - x, [1, 2, 3], 10) == 4
+    assert foldr(lambda x, acc: acc - x, [1, 2, 3], 10) == 4
 
 
 def test_reverse() -> None:
