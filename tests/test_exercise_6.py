@@ -15,6 +15,7 @@ def test_filter() -> None:
 
 def test_length() -> None:
     assert length([9, 8, 7]) == 3
+    assert length(["Ana", "Bruno", "Clara", "Daniel"]) == 4
 
 
 def test_map() -> None:
@@ -22,11 +23,11 @@ def test_map() -> None:
 
 
 def test_foldl() -> None:
-    assert foldl(lambda acc, x: acc - x, [1, 2, 3], 10) == 4
+    assert foldl(lambda acc, x: x - acc, [1, 2, 3], 10) == -8
 
 
 def test_foldr() -> None:
-    assert foldr(lambda x, acc: acc - x, [1, 2, 3], 10) == 4
+    assert foldr(lambda acc, x: acc - x, [1, 2, 3], 10) == 4
 
 
 def test_reverse() -> None:
