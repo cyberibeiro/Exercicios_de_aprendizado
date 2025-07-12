@@ -1,35 +1,35 @@
 from exercicios_de_aprendizado.exercise_6 import *
 
 
-def test_append():
+def test_append() -> None:
     assert append([1, 2], [3, 4]) == [1, 2, 3, 4]
 
 
-def test_concatenate():
+def test_concatenate() -> None:
     assert concatenate([1], [2, 3], [4]) == [1, 2, 3, 4]
 
 
-def test_filter():
+def test_filter() -> None:
     assert filter(lambda x: x > 2, [1, 2, 3, 4]) == [3, 4]
 
 
-def test_length():
+def test_length() -> None:
     assert length([9, 8, 7]) == 3
 
 
-def test_map():
+def test_map() -> None:
     assert map(lambda x: x * 2, [1, 2, 3]) == [2, 4, 6]
 
 
-def test_foldl():
+def test_foldl() -> None:
     assert foldl(lambda acc, x: acc - x, [1, 2, 3], 10) == 4
 
 
-def test_foldr():
+def test_foldr() -> None:
     assert foldr(lambda x, acc: acc - x, [1, 2, 3], 10) == 4
 
 
-def test_reverse():
+def test_reverse() -> None:
     assert reverse([1, 2, 3]) == [3, 2, 1]
 
 
