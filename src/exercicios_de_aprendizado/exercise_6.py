@@ -1,16 +1,56 @@
-'''Instruções
-Implemente operações básicas de lista.
+def append(list1, list2):
+    result = []
+    for item in list1:
+        result += [item]
+    for item in list2:
+        result += [item]
+    return result
 
-Em linguagens funcionais, liste operações como , , e são muito comuns. Implemente uma série de operações básicas de lista, sem usar funções existentes.lengthmapreduce
 
-O número e os nomes exatos das operações a serem implementadas dependerão do controle para evitar conflitos com nomes existentes, mas as operações gerais que você implementará incluem:
+def concatenate(*lists):
+    result = []
+    for lst in lists:
+        for item in lst:
+            result += [item]
+    return result
 
-append (dadas duas listas, adicione todos os itens da segunda lista ao final da primeira lista);
-concatenate (dada uma série de listas, combine todos os itens em todas as listas em uma lista nivelada);
-filter (dado um predicado e uma lista, retorna a lista de todos os itens para os quais é Truepredicate(item));
-length (dada uma lista, retorna o número total de itens dentro dela);
-map (dada uma função e uma lista, retorna a lista dos resultados da aplicação em todos os itensfunction(item));
-foldl (Dada uma função, uma lista e um acumulador inicial, dobre (reduza) cada item no acumulador da esquerda);
-foldr (dada uma função, uma lista e um acumulador inicial, dobre (reduza) cada item no acumulador da direita);
-reverse (dada uma lista, retorna uma lista com todos os itens originais, mas na ordem inversa).
-Observe que a ordem na qual os argumentos são passados para as funções de dobra (, ) é significativa.foldlfoldr'''
+
+def filter(predicate, lst):
+    result = []
+    for item in lst:
+        if predicate(item):
+            result += [item]
+    return result
+
+
+def length(lst):
+    count = 0
+    for _ in lst:
+        count += 1
+    return count
+
+
+def map(function, lst):
+    result = []
+    for item in lst:
+        result += [function(item)]
+    return result
+
+
+def foldl(function, lst, accumulator):
+    for item in lst:
+        accumulator = function(accumulator, item)
+    return accumulator
+
+
+def foldr(function, lst, accumulator):
+    for item in reverse(lst):
+        accumulator = function(item, accumulator)
+    return accumulator
+
+
+def reverse(lst):
+    result = []
+    for item in lst:
+        result = [item] + result
+    return result
