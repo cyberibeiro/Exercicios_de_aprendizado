@@ -1,13 +1,25 @@
-from space_age import SpaceAge
+from space_age import SpaceAge 
 
-# Criando uma instância com 1 bilhão de segundos
-idade = SpaceAge(1000000000)
+def test_on_earth() -> None:
+    assert SpaceAge(1000000000).on_earth() == 31.69
 
-print("Idade na Terra:", idade.on_earth())      # Esperado: 31.69
-print("Idade em Mercúrio:", idade.on_mercury())  # Esperado: ~131.57
-print("Idade em Vênus:", idade.on_venus())       # Esperado: ~51.51
-print("Idade em Marte:", idade.on_mars())        # Esperado: ~16.85
-print("Idade em Júpiter:", idade.on_jupiter())   # Esperado: ~2.67
-print("Idade em Saturno:", idade.on_saturn())    # Esperado: ~1.08
-print("Idade em Urano:", idade.on_uranus())      # Esperado: ~0.38
-print("Idade em Netuno:", idade.on_neptune())    # Esperado: ~0.19
+def test_on_mercury() -> None:
+    assert SpaceAge(2134835688).on_mercury() == 280.88
+
+def test_on_venus() -> None:
+    assert SpaceAge(189839836).on_venus() == 9.78
+
+def test_on_mars() -> None:
+    assert SpaceAge(2329871239).on_mars() == 39.25
+
+def test_on_jupiter() -> None:
+    assert SpaceAge(901876382).on_jupiter() == 2.41
+
+def test_on_saturn() -> None:
+    assert SpaceAge(3000000000).on_saturn() == 3.23
+
+def test_on_uranus() -> None:
+    assert SpaceAge(3210123456).on_uranus() == 1.21
+
+def test_on_neptune() -> None:
+    assert SpaceAge(8210123456).on_neptune() == 1.58
