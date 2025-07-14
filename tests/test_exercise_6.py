@@ -32,15 +32,3 @@ def test_foldr() -> None:
 
 def test_reverse() -> None:
     assert reverse([1, 2, 3]) == [3, 2, 1]
-
-
-if __name__ == "__main__":
-    test_append()
-    test_concatenate()
-    test_filter()
-    test_length()
-    test_map()
-    test_foldl()
-    test_foldr()
-    test_reverse()
-    print("✅ Todos os testes passaram!")
