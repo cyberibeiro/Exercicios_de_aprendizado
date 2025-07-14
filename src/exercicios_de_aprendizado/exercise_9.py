@@ -1,42 +1,40 @@
-'''Introdução
-O ano é 2525 e você acaba de embarcar em uma jornada para visitar todos os planetas do Sistema Solar (Mercúrio, Vênus, Terra, Marte, Júpiter, Saturno, Urano e Netuno). A primeira parada é Mercúrio, onde a alfândega exige que você preencha um formulário (a burocracia aparentemente não é específica da Terra). Quando você entrega o formulário ao funcionário da alfândega, ele o examina e franze a testa. "Você realmente espera que eu acredite que você tem apenas 50 anos? Você deve estar mais perto de 200 anos!"
+class SpaceAge:
+    EARTH_YEAR_SECONDS = 31557600
 
-Divertido, você espera que o funcionário da alfândega comece a rir, mas eles parecem estar falando sério. Você percebe que entrou na sua idade em anos terrestres, mas o oficial esperava isso nos anos de Mercúrio! Como o período orbital de Mercúrio ao redor do sol é significativamente mais curto do que a Terra, você é muito mais velho nos anos de Mercúrio. Após alguns cálculos rápidos, você pode fornecer sua idade em anos de mercúrio. O funcionário da alfândega sorri, satisfeito, e acena para você. Você faz uma anotação mental para pré-calcular sua idade específica do planeta antes de futuras verificações alfandegárias, para evitar tais confusões.
+    ORBITAL_PERIODS = {
+        'earth':   1.0,
+        'mercury': 0.2408467,
+        'venus':   0.61519726,
+        'mars':    1.8808158,
+        'jupiter': 11.862615,
+        'saturn':  29.447498,
+        'uranus':  84.016846,
+        'neptune': 164.79132
+    }
 
-Nota
-Se você está se perguntando por que Plutão não fez o corte, assista a este vídeo do YouTube.
+    def __init__(self, seconds):
+        self.seconds = seconds
 
-Instruções
-Dada uma idade em segundos, calcule quantos anos alguém teria em um planeta em nosso Sistema Solar.
+    def on_earth(self):
+        return round(self.seconds / (self.EARTH_YEAR_SECONDS * self.ORBITAL_PERIODS['earth']), 2)
 
-Um ano terrestre equivale a 365,25 dias terrestres, ou 31.557.600 segundos. Se lhe dissessem que alguém tinha 1.000.000.000 de segundos de idade, sua idade seria de 31,69 anos terrestres.
+    def on_mercury(self):
+        return round(self.seconds / (self.EARTH_YEAR_SECONDS * self.ORBITAL_PERIODS['mercury']), 2)
 
-Para os outros planetas, você deve levar em conta seu período orbital em Anos Terrestres:
+    def on_venus(self):
+        return round(self.seconds / (self.EARTH_YEAR_SECONDS * self.ORBITAL_PERIODS['venus']), 2)
 
-Planeta	Período orbital em anos terrestres
-Mercúrio	0.2408467
-Vênus	0.61519726
-Terra	1.0
-Marte	1.8808158
-Júpiter	11.862615
-Saturno	29.447498
-Urano	84.016846
-Netuno	164.79132
-Nota
-O comprimento real de uma órbita completa da Terra ao redor do sol está mais próximo de 365.256 dias (1 ano sideral). O calendário gregoriano tem, em média, 365,2425 dias. Embora não seja totalmente preciso, 365,25 é o valor usado neste exercício. Veja Ano na Wikipedia para mais maneiras de medir um ano.
+    def on_mars(self):
+        return round(self.seconds / (self.EARTH_YEAR_SECONDS * self.ORBITAL_PERIODS['mars']), 2)
 
-Para a trilha Python, este exercício pede que você crie uma classe (classes) que inclua métodos para todos os planetas do sistema solar. Os métodos devem seguir a convenção de nomenclatura .SpaceAgeon_<planet name>
+    def on_jupiter(self):
+        return round(self.seconds / (self.EARTH_YEAR_SECONDS * self.ORBITAL_PERIODS['jupiter']), 2)
 
-Cada método deve ter a idade ("no" planeta) em anos, arredondada para duas casas decimais:return
+    def on_saturn(self):
+        return round(self.seconds / (self.EARTH_YEAR_SECONDS * self.ORBITAL_PERIODS['saturn']), 2)
 
-#creating an instance with one billion seconds, and calling .on_earth().
->>> SpaceAge(1000000000).on_earth()
+    def on_uranus(self):
+        return round(self.seconds / (self.EARTH_YEAR_SECONDS * self.ORBITAL_PERIODS['uranus']), 2)
 
-#This is one billion seconds on Earth in years
-31.69
-Para obter mais informações sobre como construir e usar classes, consulte:
-
-Uma primeira olhada nas classes da documentação do Python.
-Uma palavra sobre nomes e objetos da documentação do Python.
-Objetos, valores e tipos na documentação do modelo de dados do Python.
-O que é uma classe? do site Trey Hunners Python Morsels.'''
+    def on_neptune(self):
+        return round(self.seconds / (self.EARTH_YEAR_SECONDS * self.ORBITAL_PERIODS['neptune']), 2)
