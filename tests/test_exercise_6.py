@@ -1,4 +1,4 @@
-from space_age import SpaceAge  # importa a classe que criamos
+from space_age import SpaceAge 
 
 def test_on_earth() -> None:
     assert SpaceAge(1000000000).on_earth() == 31.69
