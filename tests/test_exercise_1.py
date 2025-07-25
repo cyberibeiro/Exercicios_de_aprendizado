@@ -1,4 +1,4 @@
-from src.exercicios_de_aprendizado.exercise_1 import exercise_1
+from exercicios_de_aprendizado.exercise_1 import exercise_1
 
 
 def test_example() -> None:
