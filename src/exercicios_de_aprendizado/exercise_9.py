@@ -2,14 +2,14 @@ from math import gcd
 
 
 def lcm(a: int, b: int) -> int:
-    """_summary_
+    """MMC
 
     Args:
-        a (int): _description_
-        b (int): _description_
+        a (int): o menor multiplo atual
+        b (int): um valor de range
 
     Returns:
-        int: _description_
+        int: menor multiplo
     """
     return abs(a * b) // gcd(a, b)
 
