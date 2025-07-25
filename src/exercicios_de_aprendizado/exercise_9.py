@@ -1,7 +1,7 @@
 from math import gcd
 
 
-def lcm(a, b) -> None:
+def lcm(a, b) -> int:
     return abs(a * b) // gcd(a, b)
 
 
