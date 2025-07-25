@@ -1,5 +1,5 @@
 class SpaceAge:
-    EARTH_YEAR_SECONDS = 31557600
+    EARTH_YEAR_SECONDS = 31_557_600
 
     ORBITAL_PERIODS = {
         "earth": 1.0,
@@ -15,39 +15,10 @@ class SpaceAge:
     def __init__(self, seconds: int) -> None:
         self.seconds = seconds
 
-
-    def _calculate_age(self, planet: str) -> float:
+    def on_planet(self, planet: str) -> float:
+        if planet not in self.ORBITAL_PERIODS:
+            raise ValueError(
+                f"Planeta '{planet}' não encontrado. Por favor, use um dos seguintes: {', '.join(self.ORBITAL_PERIODS.keys())}"
+            )
         period = self.ORBITAL_PERIODS[planet]
         return round(self.seconds / (self.EARTH_YEAR_SECONDS * period), 2)
-
-
-    def on_earth(self) -> float:
-        return self._calculate_age("earth")
-
-
-    def on_mercury(self) -> float:
-        return self._calculate_age("mercury")
-
-
-    def on_venus(self) -> float:
-        return self._calculate_age("venus")
-
-
-    def on_mars(self) -> float:
-        return self._calculate_age("mars")
-
-
-    def on_jupiter(self) -> float:
-        return self._calculate_age("jupiter")
-
-
-    def on_saturn(self) -> float:
-        return self._calculate_age("saturn")
-
-
-    def on_uranus(self) -> float:
-        return self._calculate_age("uranus")
-
-
-    def on_neptune(self) -> float:
-        return self._calculate_age("neptune")
