@@ -1,4 +1,4 @@
-from exercicios_de_aprendizado.exercise_3 import exercise_3
+from src.exercicios_de_aprendizado.exercise_3 import exercise_3
 
 
 def test_com_dez() -> None:

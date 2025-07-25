@@ -1,4 +1,4 @@
-from exercicios_de_aprendizado.exercise_6 import *
+from src.exercicios_de_aprendizado.exercise_6 import *
 
 
 def test_append() -> None:
