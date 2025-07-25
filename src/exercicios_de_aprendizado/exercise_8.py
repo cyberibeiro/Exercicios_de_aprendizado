@@ -12,48 +12,33 @@ class SpaceAge:
         "neptune": 164.79132,
     }
 
-    def __init__(self, seconds) -> None:
+    def __init__(self, seconds: int) -> None:
         self.seconds = seconds
 
-    def on_earth(self):
-        return round(
-            self.seconds / (self.EARTH_YEAR_SECONDS * self.ORBITAL_PERIODS["earth"]), 2
-        )
+    def _calculate_age(self, planet: str) -> float:
+        period = self.ORBITAL_PERIODS[planet]
+        return round(self.seconds / (self.EARTH_YEAR_SECONDS * period), 2)
 
-    def on_mercury(self):
-        return round(
-            self.seconds / (self.EARTH_YEAR_SECONDS * self.ORBITAL_PERIODS["mercury"]),
-            2,
-        )
+    def on_earth(self) -> float:
+        return self._calculate_age("earth")
 
-    def on_venus(self):
-        return round(
-            self.seconds / (self.EARTH_YEAR_SECONDS * self.ORBITAL_PERIODS["venus"]), 2
-        )
+    def on_mercury(self) -> float:
+        return self._calculate_age("mercury")
 
-    def on_mars(self):
-        return round(
-            self.seconds / (self.EARTH_YEAR_SECONDS * self.ORBITAL_PERIODS["mars"]), 2
-        )
+    def on_venus(self) -> float:
+        return self._calculate_age("venus")
 
-    def on_jupiter(self):
-        return round(
-            self.seconds / (self.EARTH_YEAR_SECONDS * self.ORBITAL_PERIODS["jupiter"]),
-            2,
-        )
+    def on_mars(self) -> float:
+        return self._calculate_age("mars")
 
-    def on_saturn(self):
-        return round(
-            self.seconds / (self.EARTH_YEAR_SECONDS * self.ORBITAL_PERIODS["saturn"]), 2
-        )
+    def on_jupiter(self) -> float:
+        return self._calculate_age("jupiter")
 
-    def on_uranus(self):
-        return round(
-            self.seconds / (self.EARTH_YEAR_SECONDS * self.ORBITAL_PERIODS["uranus"]), 2
-        )
+    def on_saturn(self) -> float:
+        return self._calculate_age("saturn")
 
-    def on_neptune(self):
-        return round(
-            self.seconds / (self.EARTH_YEAR_SECONDS * self.ORBITAL_PERIODS["neptune"]),
-            2,
-        )
+    def on_uranus(self) -> float:
+        return self._calculate_age("uranus")
+
+    def on_neptune(self) -> float:
+        return self._calculate_age("neptune")

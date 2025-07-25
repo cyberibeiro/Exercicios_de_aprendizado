@@ -1,4 +1,4 @@
-from exercicios_de_aprendizado.exercise_8 import 
+from exercicios_de_aprendizado.exercise_8 import SpaceAge
 
 
 def test_on_earth() -> None:
