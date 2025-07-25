@@ -1,5 +1,6 @@
-from src.exercicios_de_aprendizado.exercise_8 import SpaceAge
 import pytest
+
+from src.exercicios_de_aprendizado.exercise_8 import SpaceAge
 
 
 def test_on_earth() -> None:
@@ -38,4 +39,4 @@ def test_on_invalid_planet_raises_error() -> None:
     age_calculator = SpaceAge(1_000_000_000)
     with pytest.raises(ValueError) as excinfo:
         age_calculator.on_planet("plutao")
-    assert "Planeta 'plutao' não encontrado." in str(excinfo.value)
+    assert "Planeta 'plutao' não encontrado." in str(excinfo.value)    assert "Planeta 'plutao' não encontrado." in str(excinfo.value)
