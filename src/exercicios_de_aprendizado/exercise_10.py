@@ -7,4 +7,4 @@ class Gigasecond:
         self.moment = moment
 
     def date(self) -> datetime:
-        return self.moment + timedelta(seconds=1_000_000_000)
+        return self.moment + timedelta(seconds=1_000_000_000) #date é um método por estar dentro de uma classe, vai agir sobre um objeto
