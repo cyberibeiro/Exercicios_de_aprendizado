@@ -1,0 +1,1 @@
+# Diferença da Soma Quadrada - https://projecteuler.net/problem=6
