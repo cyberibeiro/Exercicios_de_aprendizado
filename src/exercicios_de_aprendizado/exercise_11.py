@@ -1,4 +1,4 @@
-# Diferença da Soma Quadrada - https://projecteuler.net/problem=6
+# Sum Square Difference - https://projecteuler.net/problem=6
 
 def calculate_difference():
 
