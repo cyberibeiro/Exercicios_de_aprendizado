@@ -15,4 +15,4 @@ result = add_natural ** 2
 
 add_raised= sum(n_raised)
 
-print(f'A diferença entre o quadrado da soma e a soma dos quadrados dos primeiros números naturais é', result - add_raised)
+return result - add_raised
