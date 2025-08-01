@@ -1,20 +1,21 @@
 # Sum Square Difference - https://projecteuler.net/problem=6
 
-def calculate_difference():
+def calculate_difference() -> int:
+    sum_of_naturals = 0
+    sum_of_squares = 0
+    n = 1
 
-sum_of_squares = 0
-n = 0
-sum_total = 0
 
-while n <= 100:
-    sum_of_squares += number**2
-    number += 1
+    while n <= 100:
+        sum_of_naturals += n
+        sum_of_squares += n**2
+        n += 1
 
-for x in range(101):
-    sum_total += x
-    square_of_sum = sum_total ** 2
 
-return square_of_sum - sum_of_squares
+    result = sum_of_naturals ** 2
+
+
+    return result - sum_of_squares
 
 '''
 Version interesting:
