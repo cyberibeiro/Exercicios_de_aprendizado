@@ -14,7 +14,14 @@ def calculate_difference() -> int:
 
     result = sum_of_naturals ** 2
 
+    """
+    Calcula a diferença entre:
+    - o quadrado da soma dos 100 primeiros números naturais
+    - e a soma dos quadrados desses mesmos números.
 
+    Returns:
+        int: A diferença entre o quadrado da soma e a soma dos quadrados.
+    """
     return result - sum_of_squares
 
 '''

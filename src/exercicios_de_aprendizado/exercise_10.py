@@ -1,11 +1,23 @@
 # Gigassegundo - https://exercism.org/tracks/python/exercises/gigasecond
 
-from datetime import datetime, timedelta  # O timedelta que define se vai ser segundos
-     #módulo         #classes
+from datetime import datetime, timedelta
+
 class Gigasecond:
-    def __init__(self, moment: datetime) -> None: #Aqui diz que o tipo dele é uma data e hora
+    def __init__(self, moment: datetime) -> None:
+        """
+        Inicializa o objeto com um momento no tempo.
+
+        Args:
+            moment (datetime): Data e hora inicial a partir da qual o cálculo será feito.
+        """
         self.moment = moment
-        #armazeno o moment na variavel de instancia
+
 
     def date(self) -> datetime:
-        return self.moment + timedelta(seconds=1_000_000_000) #date é um método por estar dentro de uma classe, vai agir sobre um objeto
+        """
+        Retorna a data e hora após adicionar 1 gigassegundo (1.000.000.000 segundos) ao momento inicial.
+
+        Returns:
+            datetime: Nova data e hora após a soma
+        """
+        return self.moment + timedelta(seconds=1_000_000_000)

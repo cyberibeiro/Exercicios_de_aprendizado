@@ -5,7 +5,7 @@ def test_date_exact_gigasecond() -> None:
     start = datetime(2015, 1, 24, 22, 0, 0)
     expected = datetime(2046, 10, 2, 23, 46, 40)
     assert Gigasecond(start).date() == expected
-          #Cria objeto      #Usa o método
+
 def test_date_only_date_given() -> None:
     start = datetime(2000, 1, 1)
     expected = datetime(2031, 9, 9, 1, 46, 40)
