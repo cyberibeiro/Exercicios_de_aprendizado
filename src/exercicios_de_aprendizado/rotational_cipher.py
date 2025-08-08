@@ -10,6 +10,7 @@ class RotationalCipher:
         self.text = text
         self.key = key
 
+
     def encrypt(self) -> str:
         """
         Aplica a cifra de César para encriptar o texto.
@@ -19,6 +20,7 @@ class RotationalCipher:
         """
         return self._shift(self.key)
 
+
     def decrypt(self) -> str:
         """
         Aplica a cifra de César para descriptografar o texto.
@@ -27,6 +29,7 @@ class RotationalCipher:
             str: O texto original decifrado.
         """
         return self._shift(-self.key)
+
 
     def _shift(self, shift: int) -> str:
         """
