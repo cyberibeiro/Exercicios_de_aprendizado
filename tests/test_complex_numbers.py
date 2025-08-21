@@ -1,4 +1,4 @@
-from complex_numbers import Complex
+from exercicios_de_aprendizado.complex_numbers import Complex
 
 def test_addition() -> None:
     assert Complex(1, 2) + Complex(3, 4) == Complex(4, 6)

@@ -45,3 +45,4 @@ class Complex:
     def __repr__(self):
         """Representação útil em erros de teste"""
         return f"Complex({self.real}, {self.imag})"
+
