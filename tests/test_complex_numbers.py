@@ -21,3 +21,11 @@ def test_abs() -> None:
 def test_exp() -> None:
     result = Complex(0, 3.141592653589793).exp()
     assert result == Complex(-1.0, 0.0)
+
+def test_repr() -> None:
+    z = Complex(3, -4)
+    assert repr(z) == "Complex(3, -4)"
+
+def test_repr_error() -> None:
+    z = Complex(3, -4)
+    assert repr(z) == "Complex(1, -4)"
