@@ -1,7 +1,14 @@
-import math
+from __future__ import annotations
 
-class Complex:
-    def __init__(self, real: float, imag: float) -> None:
+from math import cos, exp, isclose, sin, sqrt
+
+
+class Complex_numbers:
+    def __init__(
+        self,
+        real: float,
+        imag: float,
+    ) -> None:
         """
         Inicializa um número complexo no formato (a + bi).
 
@@ -12,7 +19,7 @@ class Complex:
         self.real = real
         self.imag = imag
 
-    def __add__(self, other: "Complex") -> "Complex":
+    def __add__(self, other: Complex_numbers) -> Complex_numbers:
         """
         Soma dois números complexos.
 
@@ -20,14 +27,14 @@ class Complex:
             (a + bi) + (c + di) = (a + c) + (b + d)i
 
         Args:
-            other (Complex): outro número complexo.
+            other (Complex_numbers): outro número complexo.
 
         Returns:
-            Complex: resultado da soma.
+            Complex_numbers: resultado da soma.
         """
-        return Complex(self.real + other.real, self.imag + other.imag)
+        return Complex_numbers(self.real + other.real, self.imag + other.imag)
 
-    def __sub__(self, other: "Complex") -> "Complex":
+    def __sub__(self, other: Complex_numbers) -> Complex_numbers:
         """
         Subtrai dois números complexos.
 
@@ -35,14 +42,14 @@ class Complex:
             (a + bi) - (c + di) = (a - c) + (b - d)i
 
         Args:
-            other (Complex): outro número complexo.
+            other (Complex_numbers): outro número complexo.
 
         Returns:
-            Complex: resultado da subtração.
+            Complex_numbers: resultado da subtração.
         """
-        return Complex(self.real - other.real, self.imag - other.imag)
+        return Complex_numbers(self.real - other.real, self.imag - other.imag)
 
-    def __mul__(self, other: "Complex") -> "Complex":
+    def __mul__(self, other: Complex_numbers) -> Complex_numbers:
         """
         Multiplica dois números complexos.
 
@@ -50,17 +57,17 @@ class Complex:
             (a + bi) * (c + di) = (ac - bd) + (ad + bc)i
 
         Args:
-            other (Complex): outro número complexo.
+            other (Complex_numbers): outro número complexo.
 
         Returns:
-            Complex: resultado da multiplicação.
+            Complex_numbers: resultado da multiplicação.
         """
-        return Complex(
+        return Complex_numbers(
             self.real * other.real - self.imag * other.imag,
-            self.imag * other.real + self.real * other.imag
+            self.imag * other.real + self.real * other.imag,
         )
 
-    def __truediv__(self, other: "Complex") -> "Complex":
+    def __truediv__(self, other: Complex_numbers) -> Complex_numbers:
         """
         Divide dois números complexos.
 
@@ -68,18 +75,18 @@ class Complex:
             (a + bi) / (c + di) = [(ac + bd) / (c² + d²)] + [(bc - ad) / (c² + d²)]i
 
         Args:
-            other (Complex): outro número complexo (divisor).
+            other (Complex_numbers): outro número complexo (divisor).
 
         Returns:
-            Complex: resultado da divisão.
+            Complex_numbers: resultado da divisão.
         """
         denom = other.real**2 + other.imag**2
-        return Complex(
+        return Complex_numbers(
             (self.real * other.real + self.imag * other.imag) / denom,
-            (self.imag * other.real - self.real * other.imag) / denom
+            (self.imag * other.real - self.real * other.imag) / denom,
         )
 
-    def conjugate(self) -> "Complex":
+    def conjugate(self) -> Complex_numbers:
         """
         Retorna o conjugado de um número complexo.
 
@@ -87,9 +94,9 @@ class Complex:
             conj(a + bi) = a - bi
 
         Returns:
-            Complex: número complexo conjugado.
+            Complex_numbers: número complexo conjugado.
         """
-        return Complex(self.real, -self.imag)
+        return Complex_numbers(self.real, -self.imag)
 
     def abs(self) -> float:
         """
@@ -101,9 +108,9 @@ class Complex:
         Returns:
             float: valor absoluto (sempre ≥ 0).
         """
-        return math.sqrt(self.real**2 + self.imag**2)
+        return sqrt(self.real**2 + self.imag**2)
 
-    def exp(self) -> "Complex":
+    def exp(self) -> Complex_numbers:
         """
         Calcula a exponencial de um número complexo usando a fórmula de Euler.
 
@@ -111,10 +118,10 @@ class Complex:
             e^(a+bi) = e^a * (cos(b) + i·sin(b))
 
         Returns:
-            Complex: resultado da exponencial.
+            Complex_numbers: resultado da exponencial.
         """
-        exp_a = math.exp(self.real)
-        return Complex(exp_a * math.cos(self.imag), exp_a * math.sin(self.imag))
+        exp_a = exp(self.real)
+        return Complex_numbers(exp_a * cos(self.imag), exp_a * sin(self.imag))
 
     def __eq__(self, other: object) -> bool:
         """
@@ -127,9 +134,9 @@ class Complex:
             bool: True se forem (quase) iguais, False caso contrário.
         """
         return (
-            isinstance(other, Complex)
-            and math.isclose(self.real, other.real, rel_tol=1e-9, abs_tol=1e-9)
-            and math.isclose(self.imag, other.imag, rel_tol=1e-9, abs_tol=1e-9)
+            isinstance(other, Complex_numbers)
+            and isclose(self.real, other.real, rel_tol=1e-9, abs_tol=1e-9)
+            and isclose(self.imag, other.imag, rel_tol=1e-9, abs_tol=1e-9)
         )
 
     def __repr__(self) -> str:
@@ -137,6 +144,6 @@ class Complex:
         Representação em string de um número complexo.
 
         Returns:
-            str: representação no formato 'Complex(a, b)'.
+            str: representação no formato 'Complex_numbers(a, b)'.
         """
-        return f"Complex({self.real}, {self.imag})"
+        return f"Complex_numbers({self.real}, {self.imag})"
