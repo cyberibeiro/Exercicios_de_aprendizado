@@ -1,7 +1,6 @@
 from exercicios_de_aprendizado.exercise_12 import PigLatin
 
-
-def test_palavras_que_comecam_com_vogal():
+def test_words_starting_with_vowel():
     pig = PigLatin()
     assert pig.translate("apple") == "appleay"
     assert pig.translate("ear") == "earay"
@@ -10,19 +9,19 @@ def test_palavras_que_comecam_com_vogal():
     assert pig.translate("under") == "underay"
 
 
-def test_palavras_com_prefixos_especiais():
+def test_words_with_special_prefixes():
     pig = PigLatin()
     assert pig.translate("xray") == "xrayay"
     assert pig.translate("yttria") == "yttriaay"
 
 
-def test_palavras_com_qu():
+def test_words_with_qu():
     pig = PigLatin()
     assert pig.translate("quick") == "ickquay"
     assert pig.translate("square") == "aresquay"
 
 
-def test_palavras_com_consoantes_no_inicio():
+def test_words_with_initial_consonants():
     pig = PigLatin()
     assert pig.translate("pig") == "igpay"
     assert pig.translate("koala") == "oalakay"
@@ -30,6 +29,7 @@ def test_palavras_com_consoantes_no_inicio():
     assert pig.translate("rhythm") == "ythmrhay"
 
 
-def test_frase_completa():
+def test_full_sentence():
     pig = PigLatin()
     assert pig.translate("quick fast run") == "ickquay astfay unray"
+
