@@ -1,8 +1,16 @@
 from __future__ import annotations
+
 from math import gcd
+from multiprocessing import Value
+from typing import Any
+
 
 class Rational_Numbers:
-    def __init__(self, num: int, den: int) -> None:
+    def __init__(
+        self,
+        numerador: int,
+        denominador: int,
+    ) -> None:
         """
         Inicializa um número racional reduzido.
 
@@ -13,12 +21,12 @@ class Rational_Numbers:
         Raises:
             ValueError: Se o denominador for zero.
         """
-        if den == 0:
+        if denominador == 0:
             raise ValueError("Denominador não pode ser zero.")
-        if den < 0:
-            num, den = -num, -den
-        g = gcd(num, den)
-        self.num, self.den = num // g, den // g
+        if denominador < 0:
+            numerador, denominador = -numerador, -denominador
+        g = gcd(numerador, denominador)
+        self.numerador, self.denominador = numerador // g, denominador // g
 
     def __repr__(self) -> str:
         """
@@ -27,9 +35,9 @@ class Rational_Numbers:
         Returns:
             str: Representação no formato 'Rational(num, den)'.
         """
-        return f"Rational({self.num}, {self.den})"
+        return f"Rational({self.numerador}, {self.denominador})"
 
-    def __eq__(self, other: object) -> bool:
+    def __eq__(self, other: Any) -> bool:
         """
         Verifica se dois números racionais são iguais.
 
@@ -39,7 +47,13 @@ class Rational_Numbers:
         Returns:
             bool: True se forem ambos Rational e iguais, False caso contrário.
         """
-        return isinstance(other, Rational_Numbers) and (self.num, self.den) == (other.num, other.den)
+        if isinstance(other, Rational_Numbers):
+            return (self.numerador, self.denominador) == (
+                other.numerador,
+                other.denominador,
+            )
+
+        raise ValueError(f"Comparison cannot have class: {type(other)}")
 
     def __add__(self, other: Rational_Numbers) -> Rational_Numbers:
         """
@@ -51,7 +65,10 @@ class Rational_Numbers:
         Returns:
             Rational: Resultado da soma.
         """
-        return Rational_Numbers(self.num * other.den + other.num * self.den, self.den * other.den)
+        return Rational_Numbers(
+            self.numerador * other.denominador + other.numerador * self.denominador,
+            self.denominador * other.denominador,
+        )
 
     def __sub__(self, other: Rational_Numbers) -> Rational_Numbers:
         """
@@ -63,7 +80,10 @@ class Rational_Numbers:
         Returns:
             Rational: Resultado da subtração.
         """
-        return Rational_Numbers(self.num * other.den - other.num * self.den, self.den * other.den)
+        return Rational_Numbers(
+            self.numerador * other.denominador - other.numerador * self.denominador,
+            self.denominador * other.denominador,
+        )
 
     def __mul__(self, other: Rational_Numbers) -> Rational_Numbers:
         """
@@ -75,7 +95,9 @@ class Rational_Numbers:
         Returns:
             Rational: Resultado da multiplicação.
         """
-        return Rational_Numbers(self.num * other.num, self.den * other.den)
+        return Rational_Numbers(
+            self.numerador * other.numerador, self.denominador * other.denominador
+        )
 
     def __truediv__(self, other: Rational_Numbers) -> Rational_Numbers:
         """
@@ -90,9 +112,11 @@ class Rational_Numbers:
         Returns:
             Rational: Resultado da divisão.
         """
-        if other.num == 0:
+        if other.numerador == 0:
             raise ZeroDivisionError("Divisão por zero")
-        return Rational_Numbers(self.num * other.den, self.den * other.num)
+        return Rational_Numbers(
+            self.numerador * other.denominador, self.denominador * other.numerador
+        )
 
     def __abs__(self) -> Rational_Numbers:
         """
@@ -101,7 +125,7 @@ class Rational_Numbers:
         Returns:
             Rational: Fração com numerador positivo.
         """
-        return Rational_Numbers(abs(self.num), self.den)
+        return Rational_Numbers(abs(self.numerador), self.denominador)
 
     def pow_int(self, n: int) -> Rational_Numbers:
         """
@@ -114,9 +138,9 @@ class Rational_Numbers:
             Rational: Resultado da potência.
         """
         if n >= 0:
-            return Rational_Numbers(self.num**n, self.den**n)
+            return Rational_Numbers(self.numerador**n, self.denominador**n)
         else:
-            return Rational_Numbers(self.den**-n, self.num**-n)
+            return Rational_Numbers(self.denominador**-n, self.numerador**-n)
 
     def pow_real(self, x: float) -> float:
         """
@@ -128,7 +152,7 @@ class Rational_Numbers:
         Returns:
             float: Resultado da potência.
         """
-        return (self.num ** x) / (self.den ** x)
+        return (self.numerador**x) / (self.denominador**x)
 
     def real_pow_rational(self, x: float) -> float:
         """
@@ -140,4 +164,4 @@ class Rational_Numbers:
         Returns:
             float: Resultado de x^(num/den).
         """
-        return x ** (self.num / self.den)
+        return x ** (self.numerador / self.denominador)

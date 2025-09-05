@@ -27,4 +27,4 @@ def test_pow_real() -> None:
 
 def test_real_pow_rational() -> None:
     r = Rational_Numbers(1, 2)
-    assert abs(r.real_pow_rational(9) - 3.0) < 1e-9 
+    assert abs(r.real_pow_rational(9) - 3.0) < 1e-9
