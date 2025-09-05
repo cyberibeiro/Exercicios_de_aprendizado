@@ -2,12 +2,11 @@ from exercicios_de_aprendizado.pig_latin import PigLatin
 
 
 def test_words_starting_with_vowel() -> None:
-    pig = PigLatin()
-    assert pig.translate("apple") == "appleay"
-    assert pig.translate("ear") == "earay"
-    assert pig.translate("igloo") == "iglooay"
-    assert pig.translate("object") == "objectay"
-    assert pig.translate("under") == "underay"
+    assert PigLatin().translate("apple") == "appleay"
+    assert PigLatin().translate("ear") == "earay"
+    assert PigLatin().translate("igloo") == "iglooay"
+    assert PigLatin().translate("object") == "objectay"
+    assert PigLatin().translate("under") == "underay"
 
 
 def test_words_with_special_prefixes() -> None:
