@@ -11,14 +11,14 @@ class PigLatin:
     """
 
     def __init__(self) -> None:
-        self.VOGAIS = ["a", "e", "i", "o", "u"]
+        self.vogais = ["a", "e", "i", "o", "u"]
 
     
     def _translate_word(self, word: str) -> str:
         """
         Traduz uma única palavra para Pig Latin.
         """
-        if word.startswith("xr") or word.startswith("yt") or word[0] in self.VOGAIS:
+        if word.startswith("xr") or word.startswith("yt") or word[0] in self.vogais:
             return word + "ay"
 
 
@@ -30,7 +30,7 @@ class PigLatin:
 
 
         for i, letter in enumerate(word):
-            if letter in self.VOGAIS or (letter == "y" and i > 0):
+            if letter in self.vogais or (letter == "y" and i > 0):
                 first_vowel_index = i
                 break
         else:
