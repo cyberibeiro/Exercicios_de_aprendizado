@@ -1,7 +1,7 @@
-
-
 import pytest
+
 from exercicios_de_aprendizado.prime import is_prime, nth_prime
+
 
 @pytest.mark.parametrize(
     "number, expected",
@@ -21,10 +21,10 @@ def test_is_prime(number: int, expected: bool) -> None:
 @pytest.mark.parametrize(
     "n, expected",
     [
-        (1, 2),      # 1º primo
-        (2, 3),      # 2º primo
-        (3, 5),      # 3º primo
-        (5, 11),     # 5º primo
+        (1, 2),  # 1º primo
+        (2, 3),  # 2º primo
+        (3, 5),  # 3º primo
+        (5, 11),  # 5º primo
         (10_001, 104743),  # 10001º primo
     ],
 )
