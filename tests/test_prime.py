@@ -48,5 +48,3 @@ def test_nth_prime_invalid(invalid_n: int) -> None:
     """Testa se nth_prime lança ValueError para entradas inválidas (n <= 0)."""
     with pytest.raises(ValueError):
         nth_prime(invalid_n)
-
-        nth_prime(invalid_n)
