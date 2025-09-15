@@ -34,9 +34,9 @@ def nth_prime(n: int) -> int:
     """
     if n < 1:
         raise ValueError("n deve ser >= 1")
-    count, num = 0, 1
+    count, number = 0, 1
     while count < n:
-        num += 1
-        if is_prime(num):
+        number += 1
+        if is_prime(number):
             count += 1
-    return num
+    return number
