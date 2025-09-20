@@ -1,6 +1,6 @@
 import pytest
 
-from exercicios_de_aprendizado.matching_brackest import BracketMatcher
+from exercicios_de_aprendizado.matching_brackets import BracketMatcher
 
 
 @pytest.mark.parametrize(
