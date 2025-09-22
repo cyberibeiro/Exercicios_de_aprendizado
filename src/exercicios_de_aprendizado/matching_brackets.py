@@ -1,13 +1,15 @@
-from typing import List
 class BracketMatcher:
-    def __init__(self, string: str) -> None:
+    def __init__(
+        self,
+        texto: str,
+    ) -> None:
         """
         Inicializa com a string a ser verificada.
 
         Args:
             string (str): Texto de entrada que pode conter (), [] e {}.
         """
-        self.string = string
+        self.string = texto
 
     def is_paired(self) -> bool:
         """
@@ -17,14 +19,19 @@ class BracketMatcher:
         Returns:
             bool: True se balanceado, False caso contrário.
         """
-        pairs = {")": "(", "]": "[", "}": "{"}
-        stack: List[str] = []
+        pairs = {
+            ")": "(",
+            "]": "[",
+            "}": "{",
+        }
+        opening = pairs.keys()
+        closing = pairs.values()
+        stack: list[str] = []
 
         for character in self.string:
-            if character in "([{":
+            if character in opening:
                 stack.append(character)
-            elif character in ")]}":
-                if not stack or stack.pop() != pairs[character]:
-                    return False
+            elif character in closing and (not stack or stack.pop() != pairs[character]):
+                return False
 
         return not stack
