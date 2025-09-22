@@ -18,6 +18,5 @@ from exercicios_de_aprendizado.matching_brackets import BracketMatcher
         ("(([])", False),
     ],
 )
-def test_bracket_matcher(text, expected) -> None:
-    assert BracketMatcher(text).is_paired() == expected
+def test_bracket_matcher(text: str, expected: bool) -> None:
     assert BracketMatcher(text).is_paired() == expected

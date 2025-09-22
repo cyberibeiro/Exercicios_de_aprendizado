@@ -1,3 +1,4 @@
+from typing import List
 class BracketMatcher:
     def __init__(self, string: str) -> None:
         """
@@ -17,7 +18,7 @@ class BracketMatcher:
             bool: True se balanceado, False caso contrário.
         """
         pairs = {")": "(", "]": "[", "}": "{"}
-        stack = []
+        stack: List[str] = []
 
         for character in self.string:
             if character in "([{":
