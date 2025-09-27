@@ -24,8 +24,8 @@ class BracketMatcher:
             "]": "[",
             "}": "{",
         }
-        opening = pairs.keys()
-        closing = pairs.values()
+        opening = pairs.values()
+        closing = pairs.keys()
         stack: list[str] = []
 
         for character in self.string:
