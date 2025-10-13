@@ -1,6 +1,6 @@
 import pytest
 
-from exercicios_de_aprendizado.matching_brackets import BracketMatcher
+from exercicios_de_aprendizado.matching_brackets_recursivo import BracketMatcher
 
 
 @pytest.mark.parametrize(
@@ -19,5 +19,4 @@ from exercicios_de_aprendizado.matching_brackets import BracketMatcher
     ],
 )
 def test_bracket_matcher(text: str, expected: bool) -> None:
-    assert BracketMatcher(text).is_paired() == expected
     assert BracketMatcher(text).is_paired() == expected

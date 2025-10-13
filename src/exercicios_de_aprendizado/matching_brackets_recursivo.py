@@ -7,18 +7,26 @@ class BracketMatcher:
         Inicializa com a string a ser verificada.
 
         Args:
-            texto (str): Texto que pode conter (), [] e {}.
+            text (str): Texto que pode conter (), [] e {}.
         """
+
         self.text = text
 
-    def is_paired(self,) -> bool:
+    def is_paired(
+        self,
+    ) -> bool:
         """
         Verifica se a string está balanceada.
 
         Returns:
             bool: True se balanceado, False caso contrário.
         """
-        pairs = {")": "(", "]": "[", "}": "{"}
+
+        pairs = {
+            ")": "(",
+            "]": "[",
+            "}": "{",
+        }
         return self._check(
             self.text,
             [],
@@ -42,6 +50,7 @@ class BracketMatcher:
         Returns:
             bool: True se balanceado, False caso contrário
         """
+
         if not remaining:
             return not stack
 
