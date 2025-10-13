@@ -8,7 +8,7 @@ from pythagorean_triplet import find_pythagorean_triplet
     [
         (12, 60),
         (30, 780),
-        (1000, 31875000),  # Project Euler
+        (1_000, 31_875_000),  # Project Euler
     ],
 )
 def test_find_special_pythagorean_triplet(
