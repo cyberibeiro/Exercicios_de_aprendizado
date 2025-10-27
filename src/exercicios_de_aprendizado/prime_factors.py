@@ -1,40 +1,53 @@
-#Exercism - Prime Factors: https://exercism.org/tracks/python/exercises/prime-factors
+# Exercism - Prime Factors: https://exercism.org/tracks/python/exercises/prime-factors
 
-from typing import List
 
-def prime_factors(number: int) -> list[int]:
+def prime_factorization(n: int) -> list[int]:
     """
-    Computa a fatoração prima de um número natural.
+    Calcula a fatoração prima de um número natural de forma otimizada.
 
-    Utiliza o método de Divisão por Tentativa otimizado (Trial Division)
-    para encontrar todos os fatores primos, incluindo repetições.
+    O algoritmo utiliza o método de Divisão por Tentativa otimizado (6k ± 1),
+    que reduz significativamente o número de divisões necessárias em relação à
+    versão tradicional. É eficiente para valores grandes de n.
 
     Args:
-        number (int): O número natural a ser fatorado.
+        n (int): O número inteiro positivo a ser fatorado.
 
     Returns:
-        list[int]: Uma lista de inteiros contendo os fatores primos do número,
-                   em ordem não decrescente. Retorna uma lista vazia para números <= 1.
+        list[int]: Lista contendo os fatores primos de n em ordem não decrescente.
+                   Retorna uma lista vazia se n <= 1.
+
+    Raises:
+        ValueError: Se n não for um inteiro positivo.
     """
-    if number <= 1:
+    if not isinstance(n, int) or n < 1:
+        raise ValueError("A entrada deve ser um inteiro positivo.")
+
+    if n == 1:
         return []
 
-    factors: list[int] = []
-    current_number: int = number
-    divisor: int = 3
+    factors = []
 
-    while current_number % 2 == 0:
+    while n % 2 == 0:
         factors.append(2)
-        current_number //= 2
+        n //= 2
 
-    while divisor * divisor <= current_number:
-        if current_number % divisor == 0:
-            factors.append(divisor)
-            current_number //= divisor
-        else:
-            divisor += 2
+    while n % 3 == 0:
+        factors.append(3)
+        n //= 3
 
-    if current_number > 1:
-        factors.append(current_number)
+    i = 5
+    while i * i <= n:
+        while n % i == 0:
+            factors.append(i)
+            n //= i
+
+        while n % (i + 2) == 0:
+            factors.append(i + 2)
+            n //= i + 2
+
+        i += 6
+
+    if n > 1:
+        factors.append(n)
 
     return factors
