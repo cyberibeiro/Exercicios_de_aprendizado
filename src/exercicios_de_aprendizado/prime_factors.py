@@ -25,7 +25,7 @@ def prime_factorization(n: int) -> list[int]:
     if n == 1:
         return []
 
-    factors = []
+    factors: list[int] = []
 
     while n % 2 == 0:
         factors.append(2)
