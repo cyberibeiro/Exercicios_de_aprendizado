@@ -16,17 +16,17 @@ from exercicios_de_aprendizado.prime_factors import prime_factorization
         (84, [2, 2, 3, 7]),
         (360, [2, 2, 2, 3, 3, 5]),
         (97, [97]),
-        (1001, [7, 11, 13]),
-        (1024, [2] * 10),
-        (999983, [999983]),
+        (1_001, [7, 11, 13]),
+        (1_024, [2] * 10),
+        (999_983, [999_983]),
         (10**6, [2, 2, 2, 2, 2, 2, 5, 5, 5, 5, 5, 5]),
         (10**9, [2] * 9 + [5] * 9),
-        (9999999967, [9999999967]),
-        (600851475143, [71, 839, 1471, 6857]),
-        (999999000001, [999999000001]),
+        (9_999_999_967, [9_999_999_967]),
+        (600_851_475_143, [71, 839, 1_471, 6_857]),
+        (999_999_000_001, [999_999_000_001]),
         (2**20 * 3**5 * 7**2, [2] * 20 + [3] * 5 + [7] * 2),
-        (99999999977, [99999999977]),
-        (1234567890, [2, 3, 3, 5, 3607, 3803]),
+        (99_999_999_977, [99_999_999_977]),
+        (12_345_678_90, [2, 3, 3, 5, 3_607, 3_803]),
     ],
 )
 def test_prime_factorization_valid_inputs(number, expected) -> None:
@@ -38,5 +38,4 @@ def test_prime_factorization_valid_inputs(number, expected) -> None:
 def test_prime_factorization_invalid_inputs(invalid_input) -> None:
     """Testa entradas inválidas e tipos incorretos."""
     with pytest.raises(ValueError):
-        prime_factorization(invalid_input)
         prime_factorization(invalid_input)
