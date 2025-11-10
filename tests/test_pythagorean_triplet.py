@@ -1,6 +1,6 @@
 import pytest
 
-from pythagorean_triplet import find_pythagorean_triplet
+from exerciciospythagorean_triplet import find_pythagorean_triplet
 
 
 @pytest.mark.parametrize(
