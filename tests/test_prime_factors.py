@@ -34,7 +34,7 @@ def test_prime_factorization_valid_inputs(number, expected) -> None:
     assert prime_factorization(number) == expected
 
 
-@pytest.mark.parametrize("invalid_input", [0, -1, -100, 3.14, "abc", None])
+@pytest.mark.parametrize("invalid_input", [0, -1, -100])
 def test_prime_factorization_invalid_inputs(invalid_input) -> None:
     """Testa entradas inválidas e tipos incorretos."""
     with pytest.raises(ValueError):

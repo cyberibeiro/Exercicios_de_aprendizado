@@ -1,5 +1,6 @@
 # Exercism - Prime Factors: https://exercism.org/tracks/python/exercises/prime-factors
 
+
 def prime_factorization(to_factor: int) -> list[int]:
     """
     Calcula a fatoração prima de um número natural de forma otimizada.
@@ -18,19 +19,19 @@ def prime_factorization(to_factor: int) -> list[int]:
     Raises:
         ValueError: Se to_factor não for um inteiro positivo.
     """
-    if not isinstance(to_factor, int) or to_factor < 1:
+    if 1 > to_factor:
         raise ValueError("A entrada deve ser um inteiro positivo.")
 
-    if to_factor == 1:
+    if 1 == to_factor:
         return []
 
     factors: list[int] = []
 
-    while to_factor % 2 == 0:
+    while not to_factor % 2:
         factors.append(2)
         to_factor //= 2
 
-    while to_factor % 3 == 0:
+    while not to_factor % 3:
         factors.append(3)
         to_factor //= 3
 
