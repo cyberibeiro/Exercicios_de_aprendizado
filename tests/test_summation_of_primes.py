@@ -1,4 +1,5 @@
 import pytest
+
 from exercicios_de_aprendizado.summation_of_primes import sum_primes_below
 
 
@@ -15,7 +16,6 @@ from exercicios_de_aprendizado.summation_of_primes import sum_primes_below
         (2_000_000, 142_913_828_922),
     ],
 )
-def test_sum_primes_below(limit, expected_sum) -> None:
+def test_sum_primes_below(limit: int, expected_sum: int) -> None:
     result = sum_primes_below(limit)
     assert result == expected_sum
-
