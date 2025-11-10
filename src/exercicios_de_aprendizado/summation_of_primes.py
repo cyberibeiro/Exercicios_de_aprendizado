@@ -1,3 +1,5 @@
+# Project Euler - Summation of Primes : https://projecteuler.net/problem=10
+
 def sum_primes_below(limit: int) -> int:
     """
     Retorna a soma de todos os números primos menores que 'limit'.
