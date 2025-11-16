@@ -1,4 +1,4 @@
-# Project Euler - Summation of Primes : https://projecteuler.net/problem=10
+# Project Euler - Summation of Primes: https://projecteuler.net/problem=10
 
 def sum_primes_below(limit: int) -> int:
     """

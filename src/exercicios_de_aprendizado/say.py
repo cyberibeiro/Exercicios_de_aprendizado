@@ -1,4 +1,4 @@
-# https://exercism.org/tracks/python/exercises/say
+# Exercism - Say: https://exercism.org/tracks/python/exercises/say
 
 NUMBER_WORDS_0_TO_19 = [
     "zero",

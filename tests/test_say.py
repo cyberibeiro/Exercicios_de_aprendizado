@@ -2,6 +2,7 @@ import pytest
 
 from exercicios_de_aprendizado.say import say
 
+
 @pytest.mark.parametrize("number, expected", [
     (0, "zero"),
     (1, "one"),
