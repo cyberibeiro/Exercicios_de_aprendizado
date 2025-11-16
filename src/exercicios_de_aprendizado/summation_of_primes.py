@@ -19,5 +19,3 @@ def sum_primes_below(limit: int) -> int:
         prime += 1
 
     return sum(i for i, is_prime in enumerate(sieve) if is_prime)
-
-
