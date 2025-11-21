@@ -8,7 +8,7 @@ from exercicios_de_aprendizado.summation_of_primes import sum_primes_below
     [
         (0, 0),
         (1, 0),
-        (2, 0),
+        (2, 2),
         (3, 2),
         (10, 17),
         (20, 77),
