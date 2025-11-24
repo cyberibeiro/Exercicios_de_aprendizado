@@ -77,7 +77,7 @@ def say(number: int) -> str:
     if number < 0 or number > 999_999_999_999:
         raise ValueError("input out of range")
 
-    if number == 0:
+    if not number:
         return "zero"
 
     if number < 1000:
