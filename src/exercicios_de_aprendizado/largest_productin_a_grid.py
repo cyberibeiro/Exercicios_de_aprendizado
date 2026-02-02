@@ -1,7 +1,12 @@
 # Project Euler: https://projecteuler.net/problem=11
 
 
-def read_grid_from_file(file_path: str) -> list[list[int]]:
+from pathlib import Path
+
+
+def read_grid_from_file(
+    file_path: Path,
+) -> list[list[int]]:
     """
     Lê um arquivo de texto contendo uma matriz de números inteiros
     separados por espaço e retorna uma lista de listas de inteiros.
@@ -15,13 +20,20 @@ def read_grid_from_file(file_path: str) -> list[list[int]]:
     return grid
 
 
-def largest_product_in_grid(grid: list[list[int]], sequence_length: int = 4) -> int:
+def largest_product_in_grid(
+    grid: list[list[int]],
+    sequence_length: int = 4,
+) -> int:
     """
     Retorna o maior produto de 'sequence_length' números adjacentes
     na mesma direção (horizontal, vertical ou diagonal) dentro da matriz.
     """
-    total_rows: int = len(grid)
-    total_columns: int = len(grid[0])
+    total_rows: int = len(
+        grid
+    )  # quantidade de linhas da tabela (cada item de grid é uma linha)
+    total_columns: int = len(
+        grid[0]
+    )  # quantidade de colunas (quantidade de itens dentro de uma linha)
     max_product: int = 0
 
     for row_index in range(total_rows):
