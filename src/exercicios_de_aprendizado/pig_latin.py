@@ -28,7 +28,7 @@ class PigLatin:
             return rest_of_word + consonant_cluster + "ay"
 
         for index, char in enumerate(word):
-            if char in self.vowels or ("y" == char and 0 > index):
+            if char in self.vowels or (char == "y" and index > 0):
                 first_vowel_index = index
 
                 break
