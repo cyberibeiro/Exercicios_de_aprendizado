@@ -37,4 +37,4 @@ def generate_acronym(phrase: str) -> str:
     words: list[str] = re.findall(r"[A-Za-z]+(?:'[A-Za-z]+)?", phrase)
     acronym: str = "".join(word[0].upper() for word in words)
 
-    return acronym    return acronym
+    return acronym
