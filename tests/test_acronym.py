@@ -34,4 +34,3 @@ from exercicios_de_aprendizado.acronym import generate_acronym
 )
 def test_generate_acronym(phrase: str, expected: str) -> None:
     assert generate_acronym(phrase) == expected
-    assert generate_acronym(phrase) == expected
