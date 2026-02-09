@@ -1,5 +1,4 @@
-import re
-
+from re import findall
 
 def generate_acronym(phrase: str) -> str:
     """
@@ -34,7 +33,6 @@ def generate_acronym(phrase: str) -> str:
 # re é uma biblioteca de regras (padrões)
 # no caso "Ache todas as sequências de letras que podem conter um apóstrofo (') no meio.”
 
-    words: list[str] = re.findall(r"[A-Za-z]+(?:'[A-Za-z]+)?", phrase)
-    acronym: str = "".join(word[0].upper() for word in words)
+    words: list[str] = findall(r"[A-Za-z]+(?:'[A-Za-z]+)?", phrase)
 
-    return acronym
+    return "".join(word[0].upper() for word in words)
