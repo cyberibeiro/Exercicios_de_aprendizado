@@ -3,6 +3,7 @@
 
 from math import sqrt
 
+
 def count_divisors(n: int) -> int:
     """
     Retorna a quantidade de divisores de 'n'.
@@ -23,6 +24,7 @@ def count_divisors(n: int) -> int:
         if n % divisor == 0:
             count += 2
 
+    # Verificação de quadrado perfeito, quando repete um divisor
     if int(sqrt(n)) ** 2 == n:
         count -= 1
 
@@ -48,4 +50,5 @@ def first_triangular_with_more_than_n_divisors(min_divisors: int) -> int:
         if count_divisors(triangular) > min_divisors:
             return triangular
 
+    return -1
     return -1
