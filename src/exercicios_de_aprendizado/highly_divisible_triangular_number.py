@@ -51,4 +51,3 @@ def first_triangular_with_more_than_n_divisors(min_divisors: int) -> int:
             return triangular
 
     return -1
-    return -1
