@@ -17,22 +17,16 @@ def count_divisors(n: int) -> int:
     Returns:
         A quantidade de divisores de 'n'. Retorna 0 se n < 1.
     """
-    if n < 0:
+    if n < 1:
         return 0
 
-    count = 0
-    for divisor in range(1, int(sqrt(n)) + 1):
-        if n % divisor == 0:
-            count += 2
+    count = sum(2 for divisor in range(1, int(sqrt(n)) + 1) if n % divisor == 0)
 
     # Verificação de quadrado perfeito, quando repetir divisor
-    if int(sqrt(n)) ** 2 == n:
-        count -= 1
-
-    return count
+    return count - 1 if int(sqrt(n)) ** 2 == n else count
 
 
-def first_triangular_with_more_than_n_divisors(min_divisors: int) -> int | None:
+def first_triangular_with_more_than_n_divisors(min_divisors: int) -> int:
     """
     Retorna o primeiro número triangular que possui mais de 'min_divisors' divisores.
     Números triangulares são gerados pela soma acumulada dos naturais: 1, 3, 6, 10, 15...
@@ -45,10 +39,13 @@ def first_triangular_with_more_than_n_divisors(min_divisors: int) -> int | None:
         Retorna -1 se não encontrado.
     """
     triangular = 0
+    result = -1
 
     for triangle_index in range(1, int(1e9)):
         triangular += triangle_index
-        if count_divisors(triangular) > min_divisors:
-            return triangular
 
-    # return -1
+        if count_divisors(triangular) > min_divisors:
+            result = triangular
+            break
+
+    return result
