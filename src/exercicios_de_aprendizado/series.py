@@ -2,7 +2,10 @@
 # https://exercism.org/tracks/python/exercises/series
 
 
-def slice(series: str, length: int) -> list[str]:
+def slice(
+    series: str,
+    length: int,
+) -> list[str]:
     """
     Retorna todas as substrings contíguas de tamanho 'length' da string 'series'.
 
@@ -20,19 +23,13 @@ def slice(series: str, length: int) -> list[str]:
         ValueError: Se 'series' for vazia, 'length' for zero, negativo,
                     ou maior que o comprimento de 'series'.
     """
-    if length == 0:
+    if not length:
         raise ValueError("slice length cannot be zero")
-    if length < 0:
+    if 0 > length:
         raise ValueError("slice length cannot be negative")
     if not series:
         raise ValueError("series cannot be empty")
-    if length > len(series):
+    if len(series) < length:
         raise ValueError("slice length cannot be greater than series length")
 
     return [series[start : start + length] for start in range(len(series) - length + 1)]
-
-    # resultado = []
-    # for start in range(len(series) - length + 1):
-    #     fatiamento = series[start : start + length]
-    #     resultado.append(fatiamento)
-    # return resultado

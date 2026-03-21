@@ -1,4 +1,5 @@
 import pytest
+
 from exercicios_de_aprendizado.series import slice
 
 
@@ -13,10 +14,11 @@ from exercicios_de_aprendizado.series import slice
     ],
 )
 def test_slice_returns_correct_substrings(
-    series: str, length: int, expected: list[str]
+    series: str,
+    length: int,
+    expected: list[str],
 ) -> None:
-    result = slice(series, length)
-    assert result == expected
+    assert slice(series, length) == expected
 
 
 @pytest.mark.parametrize(
@@ -29,7 +31,9 @@ def test_slice_returns_correct_substrings(
     ],
 )
 def test_slice_raises_value_error(
-    series: str, length: int, expected_error: str
+    series: str,
+    length: int,
+    expected_error: str,
 ) -> None:
     with pytest.raises(ValueError, match=expected_error):
         slice(series, length)
